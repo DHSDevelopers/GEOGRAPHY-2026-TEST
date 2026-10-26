@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geography Class 10 - All 52 Questions Interactive Test</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        neonCyan: '#00d4ff',
+                        neonPurple: '#7c3aed',
+                        neonPink: '#f43f5e',
+                        darkBg: '#090d16',
+                        cardBg: 'rgba(17, 24, 39, 0.75)',
+                    },
+                    boxShadow: {
+                        cyanGlow: '0 0 20px rgba(0, 212, 255, 0.35)',
+                        purpleGlow: '0 0 20px rgba(124, 58, 237, 0.35)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: radial-gradient(circle at 15% 15%, #1e1b4b 0%, #090d16 45%), 
+                        radial-gradient(circle at 85% 85%, #0f172a 0%, #090d16 50%);
+            background-attachment: fixed;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-btn {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .glass-btn:hover:not(:disabled) {
+            background: rgba(0, 212, 255, 0.15);
+            border-color: rgba(0, 212, 255, 0.4);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.5);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(124, 58, 237, 0.5);
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen font-sans flex flex-col justify-between selection:bg-neonCyan selection:text-darkBg">
+
+    <!-- Top Navigation Header -->
+    <header class="glass-panel sticky top-0 z-40 px-4 sm:px-8 py-4 border-b border-white/10 shadow-lg">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-neonPurple to-neonCyan flex items-center justify-center text-darkBg text-xl font-black shadow-cyanGlow">
+                    <i class="fa-solid me-0 fa-earth-americas"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg sm:text-xl font-extrabold bg-gradient-to-r from-neonCyan via-white to-neonPurple bg-clip-text text-transparent">
+                        GEO MASTER 52
+                    </h1>
+                    <p class="text-xs text-slate-400 font-medium hidden sm:block">Class 10 Maharashtra Board • Full 52 Questions Practice</p>
+                </div>
+            </div>
+
+            <!-- Header Quick Stats & Grid Toggle -->
+            <div class="flex items-center gap-3 sm:gap-4">
+                <button onclick="toggleGridModal()" class="glass-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-neonCyan hover:shadow-cyanGlow flex items-center gap-2 transition">
+                    <i class="fa-solid fa-border-all"></i>
+                    <span class="hidden xs:inline">Jump Modal</span>
+                    <span id="header-progress-badge" class="bg-neonCyan/20 text-neonCyan text-xs px-2 py-0.5 rounded-full border border-neonCyan/30">1/52</span>
+                </button>
+                <div class="glass-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-emerald-400 border-emerald-500/30 flex items-center gap-2">
+                    <i class="fa-solid fa-trophy text-emerald-400"></i>
+                    <span id="score-counter">Score: 0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto px-4 py-6 sm:py-8 w-full flex-grow flex flex-col justify-center">
+
+        <!-- START SCREEN -->
+        <div id="start-screen" class="glass-panel rounded-3xl p-6 sm:p-10 border border-white/15 text-center shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-24 -left-24 w-60 h-60 bg-neonPurple/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -right-24 w-60 h-60 bg-neonCyan/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-neonCyan/10 text-neonCyan border border-neonCyan/30 uppercase tracking-widest inline-block mb-4">
+                Complete Exam Prep
+            </span>
+
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-4 leading-tight">
+                Geography Question Bank <br class="hidden sm:inline">
+                <span class="bg-gradient-to-r from-neonCyan to-neonPurple bg-clip-text text-transparent">All 52 Objectives Included</span>
+            </h2>
+
+            <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+                Test your thorough mastery of India and Brazil physical, human, climatic, and regional geography topics. Complete all 52 questions with real-time scoring, instant rationales, and bookmarking.
+            </p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8 max-w-2xl mx-auto text-left">
+                <div class="glass-panel p-3.5 rounded-2xl border-white/5">
+                    <div class="text-neonCyan text-xl font-bold">52</div>
+                    <div class="text-xs text-slate-400">Total Questions</div>
+                </div>
+                <div class="glass-panel p-3.5 rounded-2xl border-white/5">
+                    <div class="text-neonPurple text-xl font-bold">4 Options</div>
+                    <div class="text-xs text-slate-400">Multiple Choice</div>
+                </div>
+                <div class="glass-panel p-3.5 rounded-2xl border-white/5">
+                    <div class="text-emerald-400 text-xl font-bold">Instant</div>
+                    <div class="text-xs text-slate-400">Detailed Rationale</div>
+                </div>
+                <div class="glass-panel p-3.5 rounded-2xl border-white/5">
+                    <div class="text-neonPink text-xl font-bold">Grid Modal</div>
+                    <div class="text-xs text-slate-400">Quick Skip 1-52</div>
+                </div>
+            </div>
+
+            <button onclick="startQuiz()" class="w-full sm:w-auto px-10 py-4 rounded-2xl bg-gradient-to-r from-neonCyan via-blue-600 to-neonPurple text-white font-extrabold text-lg shadow-cyanGlow hover:scale-105 active:scale-95 transition-all duration-200">
+                Start Test Now <i class="fa-solid fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+
+        <!-- QUIZ STEPPER SCREEN -->
+        <div id="quiz-screen" class="hidden space-y-5">
+
+            <!-- Progress Bar Section -->
+            <div class="glass-panel p-4 rounded-2xl border border-white/10 shadow-lg">
+                <div class="flex justify-between items-center text-xs sm:text-sm font-semibold mb-2">
+                    <span id="stepper-count" class="text-neonCyan">Question 1 of 52</span>
+                    <span id="percent-complete" class="text-slate-400">2% Completed</span>
+                </div>
+                <div class="w-full bg-slate-800/80 h-3 rounded-full overflow-hidden p-0.5 border border-white/10">
+                    <div id="progress-bar-fill" class="bg-gradient-to-r from-neonCyan to-neonPurple h-full rounded-full transition-all duration-300 shadow-cyanGlow" style="width: 1.92%;"></div>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div id="question-card" class="glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl relative">
+                <!-- Top controls on card -->
+                <div class="flex justify-between items-center mb-5">
+                    <span id="question-tag" class="px-3 py-1 rounded-full text-xs font-bold bg-neonPurple/20 text-neonPurple border border-neonPurple/30">
+                        Objective #1
+                    </span>
+                    <button id="bookmark-btn" onclick="toggleBookmark()" class="text-slate-400 hover:text-amber-400 transition flex items-center gap-1 text-xs font-semibold glass-btn px-3 py-1.5 rounded-xl">
+                        <i class="fa-regular fa-bookmark" id="bookmark-icon"></i>
+                        <span id="bookmark-text">Bookmark</span>
+                    </button>
+                </div>
+
+                <!-- Question Title -->
+                <h3 id="question-text" class="text-lg sm:text-xl font-bold text-white mb-6 leading-relaxed">
+                    Question text will appear here.
+                </h3>
+
+                <!-- Options Grid -->
+                <div id="options-container" class="space-y-3">
+                    <!-- Options injected via JavaScript -->
+                </div>
+
+                <!-- Instant Rationale Box -->
+                <div id="rationale-box" class="hidden mt-6 p-4 rounded-2xl bg-slate-900/90 border border-neonCyan/30 text-sm text-slate-300">
+                    <div class="flex items-center gap-2 font-bold text-neonCyan mb-1">
+                        <i class="fa-solid fa-circle-info"></i> Rationale & Explanation:
+                    </div>
+                    <p id="rationale-text" class="leading-relaxed text-xs sm:text-sm"></p>
+                </div>
+            </div>
+
+            <!-- Navigation Bar -->
+            <div class="flex items-center justify-between gap-3">
+                <button id="prev-btn" onclick="prevQuestion()" class="glass-btn px-5 py-3 rounded-2xl text-slate-300 font-semibold text-sm hover:text-white disabled:opacity-40 disabled:cursor-not-allowed transition flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> Previous
+                </button>
+
+                <button onclick="toggleGridModal()" class="glass-btn px-4 py-3 rounded-2xl text-slate-300 font-semibold text-xs sm:text-sm hover:text-white transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-grid-2"></i> All Questions
+                </button>
+
+                <button id="next-btn" onclick="nextQuestion()" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-neonCyan to-blue-600 text-darkBg font-extrabold text-sm hover:shadow-cyanGlow transition flex items-center gap-2">
+                    <span id="next-btn-text">Next</span> <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- RESULTS REPORT SCREEN -->
+        <div id="results-screen" class="hidden glass-panel rounded-3xl p-6 sm:p-10 border border-white/10 text-center shadow-2xl relative">
+            <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-tr from-neonPurple to-neonCyan p-0.5 shadow-purpleGlow">
+                <div class="w-full h-full bg-darkBg rounded-full flex items-center justify-center text-3xl text-neonCyan">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Test Performance Report</h2>
+            <p class="text-slate-400 text-xs sm:text-sm mb-6">Class 10 Geography • Complete 52 Questions Bank</p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8">
+                <div class="glass-panel p-4 rounded-2xl border-white/5">
+                    <div id="res-score" class="text-2xl sm:text-3xl font-black text-neonCyan">0 / 52</div>
+                    <div class="text-xs text-slate-400 mt-1">Final Score</div>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl border-white/5">
+                    <div id="res-percent" class="text-2xl sm:text-3xl font-black text-neonPurple">0%</div>
+                    <div class="text-xs text-slate-400 mt-1">Accuracy Percentage</div>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl border-white/5">
+                    <div id="res-correct" class="text-2xl sm:text-3xl font-black text-emerald-400">0</div>
+                    <div class="text-xs text-slate-400 mt-1">Correct Answers</div>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl border-white/5">
+                    <div id="res-incorrect" class="text-2xl sm:text-3xl font-black text-neonPink">0</div>
+                    <div class="text-xs text-slate-400 mt-1">Incorrect Answers</div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="restartQuiz()" class="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-neonCyan to-neonPurple text-white font-extrabold text-sm shadow-cyanGlow hover:scale-105 transition">
+                    <i class="fa-solid fa-rotate-right mr-2"></i> Retake Full Test
+                </button>
+                <button onclick="toggleGridModal()" class="glass-btn px-8 py-3.5 rounded-2xl text-slate-200 font-extrabold text-sm hover:text-white transition">
+                    <i class="fa-solid fa-list-check mr-2"></i> Review All Answers
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="glass-panel py-3 px-4 border-t border-white/5 text-center text-xs text-slate-400">
+        Geography 52 Questions Mastery App • Maharashtra SSC Board Prep
+    </footer>
+
+    <!-- QUESTION GRID MODAL (1-52 JUMP SHEET) -->
+    <div id="grid-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-panel max-w-2xl w-full rounded-3xl p-6 border border-white/15 max-h-[90vh] flex flex-col shadow-2xl">
+            <div class="flex justify-between items-center mb-4 pb-3 border-b border-white/10">
+                <div>
+                    <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-table-cells text-neonCyan"></i> Question Jump Grid (1 - 52)
+                    </h3>
+                    <p class="text-xs text-slate-400">Tap any question number to jump directly</p>
+                </div>
+                <button onclick="toggleGridModal()" class="text-slate-400 hover:text-white text-xl p-1">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Status Indicator Legend -->
+            <div class="flex flex-wrap gap-4 text-xs font-medium text-slate-300 mb-4 bg-slate-900/60 p-2.5 rounded-xl border border-white/5">
+                <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-emerald-500"></span> Correct</span>
+                <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-neonPink"></span> Incorrect</span>
+                <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-amber-400"></span> Bookmarked</span>
+                <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-slate-700"></span> Unanswered</span>
+            </div>
+
+            <!-- 52 Grid Buttons -->
+            <div id="modal-grid-container" class="grid grid-cols-6 sm:grid-cols-8 gap-2.5 overflow-y-auto custom-scrollbar p-1 flex-grow">
+                <!-- Grid buttons injected via JS -->
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-white/10 flex justify-end">
+                <button onclick="toggleGridModal()" class="glass-btn px-5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white">
+                    Close Grid
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Full dataset of all 52 Geography questions accurately preserved
+        const questionsData = [
+            { id: 1, q: "Rain shadow region is found in which part of Brazil?", options: ["North-eastern part of Brazil", "South-eastern part of Brazil", "North-western part of Brazil", "Southern part of Brazil"], correct: 0, rationale: "The North-eastern part of Brazil receives low rainfall due to the obstruction caused by the Great Escarpment and Highlands, forming a rain shadow area." },
+            { id: 2, q: "The great escarpment is located in which part of Brazil?", options: ["Northern part of Brazil", "South-eastern part of Brazil", "Western part of Brazil", "Central part of Brazil"], correct: 1, rationale: "The Great Escarpment forms the steep eastern edge of the Brazilian Highlands along the South-eastern coast." },
+            { id: 3, q: "Northern most range of Himalayas is known as:", options: ["Shivalik Range", "Himachal Range", "Himadri", "Purvanchal"], correct: 2, rationale: "Himadri is the northernmost and highest continuous range of the Himalayas." },
+            { id: 4, q: "Animal which is about to extinct from India:", options: ["Cheetah", "Bengal Tiger", "One-horned Rhino", "Asiatic Lion"], correct: 0, rationale: "The Asiatic Cheetah faced severe decline and near-extinction in India." },
+            { id: 5, q: "Rain shadow region of Brazil is also known as:", options: ["Pantanal", "Drought Quadrilateral", "Amazon Basin", "Pampas"], correct: 1, rationale: "The semi-arid rain shadow region in north-eastern Brazil is famously known as the Drought Quadrilateral (Polígono das Secas)." },
+            { id: 6, q: "New moor island is formed near the mouth of river:", options: ["River Ganga", "River Indus", "River Brahmaputra", "River Mahanadi"], correct: 0, rationale: "New Moor Island emerged in the Bay of Bengal near the mouth of the River Ganga delta." },
+            { id: 7, q: "Coastline (in kilometres) of Brazil & India:", options: ["Brazil: 7,400 km; India: 7,500 km", "Brazil: 8,500 km; India: 6,000 km", "Brazil: 6,500 km; India: 7,200 km", "Brazil: 7,500 km; India: 7,400 km"], correct: 0, rationale: "Brazil has approximately 7,400 km of ocean coastline while mainland and island territory of India covers around 7,500 km." },
+            { id: 8, q: "Any 2 neighbouring countries of India & Brazil:", options: ["India: Pakistan, China; Brazil: Argentina, Peru", "India: Japan, Sri Lanka; Brazil: Chile, Ecuador", "India: Iran, Iraq; Brazil: Mexico, Canada", "India: Russia, China; Brazil: Bolivia, Chile"], correct: 0, rationale: "Pakistan and China border India, while Argentina and Peru are land neighbors of Brazil." },
+            { id: 9, q: "3 countries sharing land boundaries with India & Brazil:", options: ["India: Pakistan, China, Bangladesh; Brazil: Argentina, Bolivia, Peru", "India: Nepal, Bhutan, Japan; Brazil: Chile, Ecuador, Colombia", "India: Afghanistan, Myanmar, Sri Lanka; Brazil: Uruguay, Paraguay, Mexico", "India: China, Thailand, Vietnam; Brazil: Venezuela, Guyana, Chile"], correct: 0, rationale: "India shares land borders with Pakistan, China, and Bangladesh; Brazil shares borders with Argentina, Bolivia, and Peru." },
+            { id: 10, q: "Tributaries of river Ganga:", options: ["Yamuna, Ghaghara, Gandak, Kosi, Son", "Narmada, Tapti, Mahi, Sabarmati", "Godavari, Krishna, Kaveri, Mahanadi", "Jhelum, Chenab, Ravi, Beas"], correct: 0, rationale: "Yamuna, Ghaghara, Gandak, Kosi, and Son are key tributaries flowing into River Ganga." },
+            { id: 11, q: "Brazil is famous for which unique river dolphins?", options: ["Pink dolphins", "Blue dolphins", "Black dolphins", "Yellow dolphins"], correct: 0, rationale: "Brazil's Amazon Basin is world-famous for its unique pink freshwater dolphins (Boto)." },
+            { id: 12, q: "Densely populated parts of India:", options: ["Northern Plains / Ganga Plains", "Himalayan Alpine Region", "Thar Desert", "Western Ghats High Hills"], correct: 0, rationale: "The Northern Plains have abundant fertile soil, water supply, and flat land, supporting heavy population density." },
+            { id: 13, q: "Origin of River Amazon:", options: ["Eastern slope of Andes Mountain in Peru", "Brazilian Highlands", "Guiana Highlands", "Atlantic Coast"], correct: 0, rationale: "The Amazon River originates from the high Andes Mountains in Peru." },
+            { id: 14, q: "Literacy rate of India & Brazil in 2016:", options: ["India: 72.2%; Brazil: 92.6%", "India: 65.0%; Brazil: 85.0%", "India: 80.5%; Brazil: 98.1%", "India: 50.2%; Brazil: 70.4%"], correct: 0, rationale: "As per 2016 comparative statistics, India's literacy rate stood at 72.2% and Brazil's at 92.6%." },
+            { id: 15, q: "Traditional dance of Brazil:", options: ["Samba", "Tango", "Salsa", "Flamenco"], correct: 0, rationale: "Samba is the world-renowned iconic traditional dance form of Brazil." },
+            { id: 16, q: "World's population in percentage covered by Brazil:", options: ["2.75%", "5.10%", "8.25%", "1.20%"], correct: 0, rationale: "Brazil accounts for around 2.75% of the total human population on Earth." },
+            { id: 17, q: "Southmost point of India is known as:", options: ["Indira Point", "Kanyakumari", "Point Calimere", "Kovalam Point"], correct: 0, rationale: "Indira Point situated in the Nicobar group is the southernmost territory point of India." },
+            { id: 18, q: "Brazil is known for which colour dolphins?", options: ["Pink", "Grey", "Golden", "White"], correct: 0, rationale: "Brazil is known for its freshwater Amazonian pink dolphins." },
+            { id: 19, q: "Huge anacondas are found near which part of Brazil?", options: ["Pantanal", "Caatinga", "Highlands", "Pampas"], correct: 0, rationale: "The swampy wetland ecosystem of Pantanal is home to giant green anacondas." },
+            { id: 20, q: "Density of population in India & Brazil:", options: ["India: 382 per sq km; Brazil: 23 per sq km", "India: 100 per sq km; Brazil: 382 per sq km", "India: 500 per sq km; Brazil: 150 per sq km", "India: 250 per sq km; Brazil: 80 per sq km"], correct: 0, rationale: "India has high density (382 persons/sq km) whereas Brazil has low density (23 persons/sq km)." },
+            { id: 21, q: "Brazil is mainly covered with what landform?", options: ["Highlands and Plateaus", "Vast Coastal Plains", "High Snow Mountains", "Sandy Deserts"], correct: 0, rationale: "Highlands and plateaus form the vast majority of Brazil's geographical area." },
+            { id: 22, q: "River Amazon originate from:", options: ["Eastern slope of Andes Mountains in Peru", "Southern Brazilian Escarpment", "Lake Titicaca", "Guiana Massif"], correct: 0, rationale: "The Amazon River starts its journey from the eastern slopes of the Peruvian Andes." },
+            { id: 23, q: "Which part of India is called Peninsula?", options: ["Southern part", "Northern part", "Eastern part", "Western part"], correct: 0, rationale: "Southern India is bounded by sea on three sides (Arabian Sea, Bay of Bengal, Indian Ocean), making it a peninsula." },
+            { id: 24, q: "Rajasthan desert is also known as:", options: ["Thar Desert / Marusthali", "Rann of Kutch", "Deccan Plateau", "Spiti Cold Desert"], correct: 0, rationale: "The arid desert territory of Rajasthan is termed the Thar Desert or Marusthali." },
+            { id: 25, q: "Active volcano place in India:", options: ["Barren Island", "Minicoy Island", "Majuli Island", "Diu Island"], correct: 0, rationale: "Barren Island in the Andaman Sea is India's only confirmed active volcano." },
+            { id: 26, q: "Marshy land of Brazil:", options: ["Pantanal", "Selvas", "Campos", "Caatinga"], correct: 0, rationale: "Pantanal is one of the world's largest tropical wetlands and marshlands in Brazil." },
+            { id: 27, q: "Smallest state of Brazil:", options: ["Sergipe", "Sao Paulo", "Rio de Janeiro", "Bahia"], correct: 0, rationale: "Sergipe is geographically the smallest state in Brazil." },
+            { id: 28, q: "Smallest state of Brazil & India:", options: ["Brazil: Sergipe; India: Goa", "Brazil: Alagoas; India: Sikkim", "Brazil: Acre; India: Tripura", "Brazil: Amazonas; India: Kerala"], correct: 0, rationale: "Sergipe is the smallest state of Brazil and Goa is the smallest state of India." },
+            { id: 29, q: "Biggest state of India & Brazil:", options: ["India: Rajasthan; Brazil: Amazonas", "India: Maharashtra; Brazil: Sao Paulo", "India: Uttar Pradesh; Brazil: Minas Gerais", "India: Madhya Pradesh; Brazil: Bahia"], correct: 0, rationale: "Rajasthan is India's largest state by area, while Amazonas is Brazil's largest state." },
+            { id: 30, q: "Capital of India:", options: ["New Delhi", "Mumbai", "Kolkata", "Chennai"], correct: 0, rationale: "New Delhi is the official capital city of India." },
+            { id: 31, q: "Capital of Brazil:", options: ["Brasília", "Rio de Janeiro", "Sao Paulo", "Salvador"], correct: 0, rationale: "Brasília is the planned federal capital of Brazil." },
+            { id: 32, q: "Himalayas is a what type of mountain?", options: ["Young fold mountains", "Block mountains", "Volcanic mountains", "Residual mountains"], correct: 0, rationale: "The Himalayan system consists of geologically young fold mountains formed by plate tectonics." },
+            { id: 33, q: "Rain shadow region is also known as:", options: ["Drought Quadrilateral", "Pantanal", "Serra do Mar", "Gran Chaco"], correct: 0, rationale: "In Brazil, the north-eastern rain shadow area is called the Drought Quadrilateral." },
+            { id: 34, q: "Location of Barren Islands:", options: ["Andaman Sea", "Arabian Sea", "Lakshadweep Sea", "Gulf of Mannar"], correct: 0, rationale: "Barren Island is situated within the waters of the Andaman Sea." },
+            { id: 35, q: "2 water bodies surrounding India:", options: ["Arabian Sea, Bay of Bengal", "Red Sea, Black Sea", "Mediterranean Sea, Baltic Sea", "Dead Sea, Caspian Sea"], correct: 0, rationale: "The Arabian Sea flanks India's west coast and the Bay of Bengal flanks the east coast." },
+            { id: 36, q: "Largest & smallest state of India:", options: ["Rajasthan / Goa", "Madhya Pradesh / Sikkim", "Maharashtra / Tripura", "Uttar Pradesh / Mizoram"], correct: 0, rationale: "Rajasthan is the largest state by landmass and Goa is the smallest state in India." },
+            { id: 37, q: "Youngest range of Himalayas:", options: ["Shivalik Range", "Himadri", "Himachal", "Trans-Himalaya"], correct: 0, rationale: "The outer foothills known as Shivalik Range represent the youngest Himalayan range." },
+            { id: 38, q: "In swampy areas of Pantanal huge, what is found?", options: ["Anacondas", "Pumas", "Jaguars", "Llamas"], correct: 0, rationale: "Huge green anaconda snakes inhabit the flooded swamp habitats of Pantanal." },
+            { id: 39, q: "East flowing rivers of India:", options: ["Mahanadi, Godavari, Krishna, Kaveri", "Narmada, Tapti, Sabarmati, Mahi", "Luni, Banas, Saraswati, Indus", "Zuari, Mandovi, Periyar, Bharathappuzha"], correct: 0, rationale: "Mahanadi, Godavari, Krishna, and Kaveri flow eastwards to empty into the Bay of Bengal." },
+            { id: 40, q: "The part of India where dispersed settlements is found:", options: ["Hilly areas", "Northern Plains", "Coastal Plains", "River Deltas"], correct: 0, rationale: "Rugged terrain and hilly areas limit flat land, producing sparse and dispersed human settlements." },
+            { id: 41, q: "Things exported from Brazil:", options: ["Iron ore, coffee, cocoa, cotton", "Spices, silk, tea, wheat", "Crude oil, gold, diamonds, rice", "Electronics, vehicles, machinery, paper"], correct: 0, rationale: "Brazil is a world-leading exporter of iron ore, coffee, cocoa, and cotton." },
+            { id: 42, q: "Myanmar is the neighbour of which country?", options: ["India", "Brazil", "Chile", "Argentina"], correct: 0, rationale: "Myanmar shares a land boundary with northeastern Indian states." },
+            { id: 43, q: "Evergreen forests are found in which part of Brazil?", options: ["Amazon Basin / Equatorial region", "Southern Pampas", "Coastal Plateau", "Drought Quadrilateral"], correct: 0, rationale: "Dense tropical evergreen rainforests thrive in the warm, humid Amazon Basin equatorial zone." },
+            { id: 44, q: "3 Himalayan River system:", options: ["Indus, Ganga, Brahmaputra", "Narmada, Tapti, Godavari", "Krishna, Kaveri, Mahanadi", "Yamuna, Son, Damodar"], correct: 0, rationale: "Indus, Ganga, and Brahmaputra are the three major Himalayan river basins." },
+            { id: 45, q: "By which name is the northeast part of Brazil known?", options: ["Drought Quadrilateral", "Selvas", "Serra do Mar", "Pampas"], correct: 0, rationale: "The dry northeast region of Brazil is referred to as the Drought Quadrilateral." },
+            { id: 46, q: "Dense network of railways has been developed in which region?", options: ["Northern Indian Plains", "Himalayan Mountain Peaks", "Thar Desert Sand Dunes", "North-Eastern Dense Hills"], correct: 0, rationale: "Flat plain topography and high population density led to a dense railway network in Northern Indian Plains." },
+            { id: 47, q: "Driest part of India (Jaisalmer in western Rajasthan):", options: ["Thar Desert / Marusthali", "Deccan Plateau", "Coromandel Coast", "Sundarbans"], correct: 0, rationale: "Jaisalmer in Thar Desert/Marusthali receives the lowest annual rainfall in India." },
+            { id: 48, q: "Ancient fold mountains of India:", options: ["Aravalli Range", "Himalayas", "Western Ghats", "Vindhya Range"], correct: 0, rationale: "The Aravalli Range is one of the oldest fold mountain systems in the world." },
+            { id: 49, q: "Any 3 types of forest found in India:", options: ["Evergreen, Deciduous, Thorny and Shrub", "Taiga, Tundra, Chaparral", "Boreal, Rain, Alpine Tundra", "Mediterranean, Steppe, Prairie"], correct: 0, rationale: "India's forest types include tropical evergreen, tropical deciduous, and thorny shrub vegetation." },
+            { id: 50, q: "What is field visit?", options: ["Collecting geographical and cultural information by actually paying a visit to a particular place", "Studying geographical maps strictly in a library", "Reading online news articles about weather", "Taking a written exam in a hall"], correct: 0, rationale: "A field visit involves visiting a location firsthand to collect geographical, environmental, and socio-cultural observations." },
+            { id: 51, q: "Island formed at the mouth of river Ganga:", options: ["New Moore Island", "Sriharikota Island", "Vellingdon Island", "Salsette Island"], correct: 0, rationale: "New Moore Island was formed due to deltaic silt deposition at the Ganga river mouth." },
+            { id: 52, q: "Yamuna is a major tributary of:", options: ["River Ganga", "River Indus", "River Brahmaputra", "River Narmada"], correct: 0, rationale: "Yamuna is the largest right-bank tributary of the River Ganga." }
+        ];
+
+        // State variables
+        let currentIndex = 0;
+        let userAnswers = new Array(52).fill(null);
+        let bookmarked = new Array(52).fill(false);
+        let score = 0;
+
+        // Shuffle options dynamically so options are randomized per session while keeping track of correct index
+        const processedQuestions = questionsData.map(item => {
+            const rawOptions = [...item.options];
+            const correctAnswerText = rawOptions[item.correct];
+            
+            // Shuffle choices array
+            const shuffledOptions = [...rawOptions].sort(() => Math.random() - 0.5);
+            const newCorrectIndex = shuffledOptions.indexOf(correctAnswerText);
+            
+            return {
+                ...item,
+                options: shuffledOptions,
+                correct: newCorrectIndex
+            };
+        });
+
+        function startQuiz() {
+            document.getElementById('start-screen').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.remove('hidden');
+            renderQuestion();
+            renderModalGrid();
+        }
+
+        function renderQuestion() {
+            const q = processedQuestions[currentIndex];
+            
+            // Stepper and Badges
+            document.getElementById('stepper-count').innerText = `Question ${currentIndex + 1} of 52`;
+            document.getElementById('header-progress-badge').innerText = `${currentIndex + 1}/52`;
+            document.getElementById('question-tag').innerText = `Objective #${q.id}`;
+            document.getElementById('question-text').innerText = q.q;
+
+            // Progress Bar
+            const percent = Math.round(((currentIndex + 1) / 52) * 100);
+            document.getElementById('percent-complete').innerText = `${percent}% Completed`;
+            document.getElementById('progress-bar-fill').style.width = `${percent}%`;
+
+            // Bookmark State
+            const isBookmarked = bookmarked[currentIndex];
+            const bmIcon = document.getElementById('bookmark-icon');
+            const bmText = document.getElementById('bookmark-text');
+            const bmBtn = document.getElementById('bookmark-btn');
+            
+            if (isBookmarked) {
+                bmIcon.className = "fa-solid fa-bookmark text-amber-400";
+                bmText.innerText = "Bookmarked";
+                bmBtn.classList.add("border-amber-400/50", "bg-amber-400/10");
+            } else {
+                bmIcon.className = "fa-regular fa-bookmark text-slate-400";
+                bmText.innerText = "Bookmark";
+                bmBtn.classList.remove("border-amber-400/50", "bg-amber-400/10");
+            }
+
+            // Options rendering
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+
+            const answered = userAnswers[currentIndex] !== null;
+
+            q.options.forEach((optionText, optIndex) => {
+                const btn = document.createElement('button');
+                btn.className = `w-full text-left p-4 rounded-2xl border transition-all duration-200 flex items-center justify-between font-medium text-xs sm:text-sm `;
+
+                if (!answered) {
+                    btn.className += `glass-btn border-white/10 text-slate-200 hover:border-neonCyan/50 hover:bg-neonCyan/10`;
+                    btn.onclick = () => selectOption(optIndex);
+                } else {
+                    btn.disabled = true;
+                    if (optIndex === q.correct) {
+                        btn.className += `bg-emerald-500/20 border-emerald-500 text-emerald-300 font-bold shadow-lg`;
+                    } else if (optIndex === userAnswers[currentIndex]) {
+                        btn.className += `bg-neonPink/20 border-neonPink text-neonPink font-bold`;
+                    } else {
+                        btn.className += `opacity-40 border-white/5 text-slate-400`;
+                    }
+                }
+
+                const prefix = String.fromCharCode(65 + optIndex);
+                btn.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <span class="w-7 h-7 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-xs font-bold ${answered && optIndex === q.correct ? 'text-emerald-400 border-emerald-400' : 'text-slate-300'}">${prefix}</span>
+                        <span>${optionText}</span>
+                    </div>
+                    ${answered && optIndex === q.correct ? '<i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>' : ''}
+                    ${answered && optIndex === userAnswers[currentIndex] && optIndex !== q.correct ? '<i class="fa-solid fa-circle-xmark text-neonPink text-base"></i>' : ''}
+                `;
+
+                container.appendChild(btn);
+            });
+
+            // Rationale Box
+            const rationaleBox = document.getElementById('rationale-box');
+            if (answered) {
+                rationaleBox.classList.remove('hidden');
+                document.getElementById('rationale-text').innerText = q.rationale;
+            } else {
+                rationaleBox.classList.add('hidden');
+            }
+
+            // Navigation Buttons State
+            document.getElementById('prev-btn').disabled = currentIndex === 0;
+            const nextBtnText = document.getElementById('next-btn-text');
+            if (currentIndex === 51) {
+                nextBtnText.innerText = "Finish Test";
+            } else {
+                nextBtnText.innerText = "Next";
+            }
+
+            renderModalGrid();
+        }
+
+        function selectOption(optIndex) {
+            if (userAnswers[currentIndex] !== null) return;
+            userAnswers[currentIndex] = optIndex;
+
+            if (optIndex === processedQuestions[currentIndex].correct) {
+                score++;
+                document.getElementById('score-counter').innerText = `Score: ${score}`;
+            }
+
+            renderQuestion();
+        }
+
+        function toggleBookmark() {
+            bookmarked[currentIndex] = !bookmarked[currentIndex];
+            renderQuestion();
+        }
+
+        function nextQuestion() {
+            if (currentIndex < 51) {
+                currentIndex++;
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderQuestion();
+            }
+        }
+
+        function jumpToQuestion(index) {
+            currentIndex = index;
+            toggleGridModal();
+            renderQuestion();
+        }
+
+        function toggleGridModal() {
+            const modal = document.getElementById('grid-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function renderModalGrid() {
+            const container = document.getElementById('modal-grid-container');
+            container.innerHTML = '';
+
+            for (let i = 0; i < 52; i++) {
+                const btn = document.createElement('button');
+                btn.onclick = () => jumpToQuestion(i);
+
+                let bgClass = "bg-slate-800/80 border-white/10 text-slate-400";
+
+                if (userAnswers[i] !== null) {
+                    if (userAnswers[i] === processedQuestions[i].correct) {
+                        bgClass = "bg-emerald-500/20 border-emerald-500/50 text-emerald-400 font-bold";
+                    } else {
+                        bgClass = "bg-neonPink/20 border-neonPink/50 text-neonPink font-bold";
+                    }
+                } else if (bookmarked[i]) {
+                    bgClass = "bg-amber-400/20 border-amber-400/50 text-amber-400 font-bold";
+                }
+
+                if (i === currentIndex) {
+                    bgClass += " ring-2 ring-neonCyan shadow-cyanGlow";
+                }
+
+                btn.className = `h-10 rounded-xl border text-xs flex flex-col items-center justify-center relative transition-all duration-200 ${bgClass}`;
+                btn.innerHTML = `
+                    <span>${i + 1}</span>
+                    ${bookmarked[i] ? '<span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-amber-400 rounded-full"></span>' : ''}
+                `;
+                container.appendChild(btn);
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('results-screen').classList.remove('hidden');
+
+            const answeredCount = userAnswers.filter(a => a !== null).length;
+            const correctCount = score;
+            const incorrectCount = answeredCount - score;
+            const percentage = Math.round((correctCount / 52) * 100);
+
+            document.getElementById('res-score').innerText = `${correctCount} / 52`;
+            document.getElementById('res-percent').innerText = `${percentage}%`;
+            document.getElementById('res-correct').innerText = correctCount;
+            document.getElementById('res-incorrect').innerText = incorrectCount;
+        }
+
+        function restartQuiz() {
+            currentIndex = 0;
+            userAnswers = new Array(52).fill(null);
+            bookmarked = new Array(52).fill(false);
+            score = 0;
+            document.getElementById('score-counter').innerText = `Score: 0`;
+
+            document.getElementById('results-screen').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.remove('hidden');
+            renderQuestion();
+        }
+    </script>
+</body>
+</html>
